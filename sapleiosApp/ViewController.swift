@@ -7,14 +7,23 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var label: UILabel!
+    
+    let disposeBag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        textField.rx.text.orEmpty
+            .map {$0.description}
+            .bind(to: label.rx.text)
+            .disposed(by: disposeBag)
+
     }
-
-
 }
 
