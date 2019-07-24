@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		360C30CF22E75E06007580A2 /* gengou_happyou_reiwa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 360C30CE22E75E06007580A2 /* gengou_happyou_reiwa.jpg */; };
+		360C30D122E76514007580A2 /* BB368C1B-0927-4802-8657-5A74B78F6250-4689-0000039609E52CF9.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 360C30D022E76514007580A2 /* BB368C1B-0927-4802-8657-5A74B78F6250-4689-0000039609E52CF9.jpeg */; };
 		3640F67722D632BD0066FFB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3640F67622D632BD0066FFB4 /* AppDelegate.swift */; };
 		3640F67922D632BD0066FFB4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3640F67822D632BD0066FFB4 /* ViewController.swift */; };
 		3640F67C22D632BD0066FFB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3640F67A22D632BD0066FFB4 /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		360C30CE22E75E06007580A2 /* gengou_happyou_reiwa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gengou_happyou_reiwa.jpg; sourceTree = "<group>"; };
+		360C30D022E76514007580A2 /* BB368C1B-0927-4802-8657-5A74B78F6250-4689-0000039609E52CF9.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "BB368C1B-0927-4802-8657-5A74B78F6250-4689-0000039609E52CF9.jpeg"; sourceTree = "<group>"; };
 		3640F67322D632BD0066FFB4 /* sapleiosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sapleiosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3640F67622D632BD0066FFB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3640F67822D632BD0066FFB4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,7 +105,9 @@
 				3640F67822D632BD0066FFB4 /* ViewController.swift */,
 				3640F67A22D632BD0066FFB4 /* Main.storyboard */,
 				3640F67D22D632BE0066FFB4 /* Assets.xcassets */,
+				360C30D022E76514007580A2 /* BB368C1B-0927-4802-8657-5A74B78F6250-4689-0000039609E52CF9.jpeg */,
 				3640F67F22D632BE0066FFB4 /* LaunchScreen.storyboard */,
+				360C30CE22E75E06007580A2 /* gengou_happyou_reiwa.jpg */,
 				3640F68222D632BE0066FFB4 /* Info.plist */,
 			);
 			path = sapleiosApp;
@@ -229,7 +235,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				360C30CF22E75E06007580A2 /* gengou_happyou_reiwa.jpg in Resources */,
 				3640F68122D632BE0066FFB4 /* LaunchScreen.storyboard in Resources */,
+				360C30D122E76514007580A2 /* BB368C1B-0927-4802-8657-5A74B78F6250-4689-0000039609E52CF9.jpeg in Resources */,
 				3640F67E22D632BE0066FFB4 /* Assets.xcassets in Resources */,
 				3640F67C22D632BD0066FFB4 /* Main.storyboard in Resources */,
 			);
