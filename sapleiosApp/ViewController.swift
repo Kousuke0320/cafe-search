@@ -46,18 +46,22 @@ extension Rest {
 struct Qiita {
     
     
-    static func fetchArticle(name: String? ,completion: @escaping (Article?) -> Swift.Void) {
+    static func fetchArticle(name: String?, completion: @escaping (Article?) -> Swift.Void) {
         
         guard let name = name else {
             return
         }
         
-        let url =  "https://api.gnavi.co.jp/RestSearchAPI/v3/?keyid=68d888e65ff9a737216fd6d084c28179&name=" + name
+        let url =  "https://api.gnavi.co.jp/RestSearchAPI/v3/"
         //URLが無効ならreturnを返す
-        guard let urlComponents = URLComponents(string: url) else {
+        guard var urlComponents = URLComponents(string: url) else {
             return
         }
         
+        urlComponents.queryItems = [
+            URLQueryItem(name: "keyid", value: "68d888e65ff9a737216fd6d084c28179"),
+            URLQueryItem(name: "name", value: name)
+        ]
         
         let task = URLSession.shared.dataTask(with: urlComponents.url!) { data, response, error in
             
@@ -97,23 +101,22 @@ class ViewController: UIViewController {
             view.addSubview(tableView)
         }
         
-        Qiita.fetchArticle(name: textField.text, completion: { (articles) in
-            guard let articleValue = articles else {
-                return
-            }
-            //なぜかnilがはいる
-            self.articles = articleValue
-            
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        })
+        
         
         button.rx.tap.subscribe{ [unowned self] _ in
-            
-            self.tableView.reloadData()
-            }
-            .disposed(by: disposeBag)
+            Qiita.fetchArticle(name: self.textField.text, completion: { (articles) in
+                guard let articleValue = articles else {
+                    return
+                }
+                //なぜかnilがはいる
+                self.articles = articleValue
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+                
+            })
+            }.disposed(by: disposeBag)
         
         textField.rx.text.orEmpty
             .map {$0.description}
