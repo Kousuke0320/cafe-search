@@ -11,31 +11,28 @@ import RxSwift
 import RxCocoa
 
 struct Article: Codable {
-    var title: String = ""
-    //var userId: String = ""
+    var rest: [Rest]
 }
 
-extension Article {
-    init(_ json: [String: Any]) {
-        
-        if let title = json["title"] as? String {
-            self.title = title
-        }
-        
-//        if let user = json["user"] as? [String: Any] {
-//            if let userId = user["id"] as? String {
-//                self.userId = userId
-//            }
-//        }
-    }
+struct Rest: Codable {
+    var id: String
 }
+
+//extension Article {
+////    init(_ json: [String: Any]) {
+////        if let rest = json["rest"] as? [String: Any] {
+////            if let id = rest["id"] as? String {
+////                self.rest = id
+////            }
+////        }
+////    }
+//}
 
 struct Qiita {
     
-    static func fetchArticle(completion: @escaping ([Article]) -> Swift.Void) {
+    static func fetchArticle(completion: @escaping (Article?) -> Swift.Void) {
         
-        let url =  "https://qiita.com/api/v2/items"
-        
+        let url =  "https://api.gnavi.co.jp/RestSearchAPI/v3/?keyid=68d888e65ff9a737216fd6d084c28179&name=tokyo"
         //URLが無効ならreturnを返す
         guard var urlComponents = URLComponents(string: url) else {
             return
@@ -50,10 +47,12 @@ struct Qiita {
             guard let jsonData = data else {
                 return
             }
+            
             do {
-                let article = try JSONDecoder().decode([Article].self, from: jsonData)
+                let article = try JSONDecoder().decode(Article.self, from: jsonData)
                 print("\(article)")
                 completion(article)
+                
             } catch {
                 print(error.localizedDescription)
             }
@@ -69,8 +68,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var button: UIButton!
     
     
-    var articles: [Article] = []
-    var a = 0
+    var articles: Article?
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -79,7 +77,12 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         
         Qiita.fetchArticle(completion: { (articles) in
-            self.articles = articles
+            guard let articleValue = articles else {
+                return
+            }
+            
+            self.articles?.rest = articleValue.rest
+            
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -102,14 +105,16 @@ extension ViewController: UITableViewDataSource {
     //cellをセットする
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
-        let article = articles[indexPath.row]
-        cell.textLabel?.text = article.title
+//        let article = articles[indexPath.row]
+//        cell.textLabel?.text = article.id
         //cell.detailTextLabel?.text = article.userId
+        let article = articles?.rest[indexPath.row]
+        cell.textLabel?.text = article?.id
         return cell
     }
     
     //cellの数をセットする
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return articles.count
+        return articles?.rest.count ?? 0
     }
 }
