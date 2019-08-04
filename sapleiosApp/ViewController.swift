@@ -12,7 +12,7 @@ import RxCocoa
 
 struct Article: Codable {
     var title: String = ""
-    var userId: String = ""
+    //var userId: String = ""
 }
 
 extension Article {
@@ -22,11 +22,11 @@ extension Article {
             self.title = title
         }
         
-        if let user = json["user"] as? [String: Any] {
-            if let userId = user["id"] as? String {
-                self.userId = userId
-            }
-        }
+//        if let user = json["user"] as? [String: Any] {
+//            if let userId = user["id"] as? String {
+//                self.userId = userId
+//            }
+//        }
     }
 }
 
@@ -44,6 +44,7 @@ struct Qiita {
         urlComponents.queryItems = [
             URLQueryItem(name: "per_page", value: "50")
         ]
+        
         let task = URLSession.shared.dataTask(with: urlComponents.url!) { data, response, error in
             
             guard let jsonData = data else {
@@ -52,6 +53,7 @@ struct Qiita {
             do {
                 let article = try JSONDecoder().decode([Article].self, from: jsonData)
                 print("\(article)")
+                completion(article)
             } catch {
                 print(error.localizedDescription)
             }
@@ -93,19 +95,16 @@ class ViewController: UIViewController {
             .map {$0.description}
             .bind(to: label.rx.text)
             .disposed(by: disposeBag)
-        
-        
-
     }
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension ViewController: UITableViewDataSource {
     //cellをセットする
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
         let article = articles[indexPath.row]
         cell.textLabel?.text = article.title
-        cell.detailTextLabel?.text = article.userId
+        //cell.detailTextLabel?.text = article.userId
         return cell
     }
     
