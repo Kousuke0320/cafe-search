@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Lottie
 
 struct Article: Codable {
     //初期化をしないと表示されない
@@ -114,6 +115,8 @@ class ViewController: UIViewController {
     let disposeBag = DisposeBag()
     
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -126,6 +129,8 @@ class ViewController: UIViewController {
         
         
         button.rx.tap.subscribe{ [unowned self] _ in
+            self.showAnimation()
+            
             Qiita.fetchArticle(name: self.textField.text, completion: { (articles) in
                 guard let articleValue = articles else {
                     return
@@ -146,7 +151,21 @@ class ViewController: UIViewController {
             .disposed(by: disposeBag)
     }
     
-    
+    func showAnimation() {
+        let animationView = AnimationView(name: "Animation")
+        animationView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
+        animationView.center = self.view.center
+        animationView.contentMode = .scaleAspectFit
+        animationView.animationSpeed = 1
+        
+        view.addSubview(animationView)
+        
+        animationView.play { finished in
+            if finished {
+                animationView.removeFromSuperview()
+            }
+        }
+    }
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
