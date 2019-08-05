@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Lottie
 
 struct Article: Codable {
     //初期化をしないと表示されない
@@ -92,6 +93,19 @@ class ViewController: UIViewController {
     var articles: Article = Article()
     let disposeBag = DisposeBag()
     
+//    func showAnimation() {
+//        let animationView = AnimationView(name: "Animation")
+//        animationView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
+//        animationView.center = self.view.center
+//        //animationView.loopAnimation = false
+//        animationView.contentMode = .scaleAspectFit
+//        animationView.animationSpeed = 1
+//
+//        view.addSubview(animationView)
+//
+//        animationView.play()
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -123,6 +137,8 @@ class ViewController: UIViewController {
             .bind(to: label.rx.text)
             .disposed(by: disposeBag)
     }
+    
+    
 }
 
 extension ViewController: UITableViewDataSource {
