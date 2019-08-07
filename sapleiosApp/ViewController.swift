@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import Lottie
+import CoreLocation
 
 struct Article: Codable {
     //初期化をしないと表示されない
@@ -104,21 +105,21 @@ struct Qiita {
     }
 }
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var button: UIButton!
     
+    var locationManager: CLLocationManager!
     
     var articles: Article = Article()
     let disposeBag = DisposeBag()
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupLocationManager()
         
         setUpTableView: do {
             tableView.frame = view.frame
@@ -126,11 +127,7 @@ class ViewController: UIViewController {
             view.addSubview(tableView)
         }
         
-        
-        
         button.rx.tap.subscribe{ [unowned self] _ in
-            self.showAnimation()
-            
             Qiita.fetchArticle(name: self.textField.text, completion: { (articles) in
                 guard let articleValue = articles else {
                     return
@@ -140,6 +137,7 @@ class ViewController: UIViewController {
                 
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
+                    self.showAnimation()
                 }
                 
             })
@@ -157,14 +155,39 @@ class ViewController: UIViewController {
         animationView.center = self.view.center
         animationView.contentMode = .scaleAspectFit
         animationView.animationSpeed = 1
-        
         view.addSubview(animationView)
         
-        animationView.play { finished in
-            if finished {
-                animationView.removeFromSuperview()
-            }
+        animationView.play()
+    }
+    
+    func setupLocationManager() {
+        //位置情報取得インスタンス
+        locationManager = CLLocationManager()
+        
+        guard let locationManager = locationManager else {
+            return
         }
+        
+        //位置情報取得をリクエスト
+        locationManager.requestWhenInUseAuthorization()
+        
+        //
+        let status = CLLocationManager.authorizationStatus()
+        // 使用時に位置情報を許可した時に実施
+        if status == .authorizedWhenInUse {
+            //viewController自身をdelegate(向先に設定する)
+             locationManager.delegate = self
+            //10m単位で位置情報を取得する
+            locationManager.distanceFilter = 10
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations.first
+        let lat = location?.coordinate.latitude
+        let lon = location?.coordinate.longitude
+        print("location\(lat)\(lon)")
     }
 }
 
@@ -202,6 +225,5 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
     }
 }
