@@ -28,6 +28,10 @@
 		369E040022E8BCB000AFF3D8 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369E03FF22E8BCB000AFF3D8 /* RxRelay.framework */; };
 		369E040222E8BCEB00AFF3D8 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369E040122E8BCEB00AFF3D8 /* RxRelay.framework */; };
 		369E040322E8BCEB00AFF3D8 /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 369E040122E8BCEB00AFF3D8 /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		36FF2BA922FE79C1000A1FC1 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FF2BA822FE79C1000A1FC1 /* Article.swift */; };
+		36FF2BAB22FE79E9000A1FC1 /* Rest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FF2BAA22FE79E9000A1FC1 /* Rest.swift */; };
+		36FF2BAD22FE7A2D000A1FC1 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FF2BAC22FE7A2D000A1FC1 /* Image.swift */; };
+		36FF2BB022FE7A6A000A1FC1 /* ConnectToTabelog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FF2BAF22FE7A6A000A1FC1 /* ConnectToTabelog.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +93,10 @@
 		369E03FA22E8B7B600AFF3D8 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		369E03FF22E8BCB000AFF3D8 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		369E040122E8BCEB00AFF3D8 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
+		36FF2BA822FE79C1000A1FC1 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		36FF2BAA22FE79E9000A1FC1 /* Rest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rest.swift; sourceTree = "<group>"; };
+		36FF2BAC22FE7A2D000A1FC1 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		36FF2BAF22FE7A6A000A1FC1 /* ConnectToTabelog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectToTabelog.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +177,8 @@
 		3640F67522D632BD0066FFB4 /* sapleiosApp */ = {
 			isa = PBXGroup;
 			children = (
+				36FF2BAE22FE7A4E000A1FC1 /* HTTP */,
+				36FF2BA522FE7913000A1FC1 /* Modile */,
 				362D9FEB22F87CC300AADAAB /* img */,
 				3640F67622D632BD0066FFB4 /* AppDelegate.swift */,
 				3640F67822D632BD0066FFB4 /* ViewController.swift */,
@@ -198,6 +208,24 @@
 				3640F69822D632BE0066FFB4 /* Info.plist */,
 			);
 			path = sapleiosAppUITests;
+			sourceTree = "<group>";
+		};
+		36FF2BA522FE7913000A1FC1 /* Modile */ = {
+			isa = PBXGroup;
+			children = (
+				36FF2BA822FE79C1000A1FC1 /* Article.swift */,
+				36FF2BAA22FE79E9000A1FC1 /* Rest.swift */,
+				36FF2BAC22FE7A2D000A1FC1 /* Image.swift */,
+			);
+			path = Modile;
+			sourceTree = "<group>";
+		};
+		36FF2BAE22FE7A4E000A1FC1 /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				36FF2BAF22FE7A6A000A1FC1 /* ConnectToTabelog.swift */,
+			);
+			path = HTTP;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,7 +387,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36FF2BA922FE79C1000A1FC1 /* Article.swift in Sources */,
+				36FF2BB022FE7A6A000A1FC1 /* ConnectToTabelog.swift in Sources */,
+				36FF2BAD22FE7A2D000A1FC1 /* Image.swift in Sources */,
 				3640F67922D632BD0066FFB4 /* ViewController.swift in Sources */,
+				36FF2BAB22FE79E9000A1FC1 /* Rest.swift in Sources */,
 				3640F67722D632BD0066FFB4 /* AppDelegate.swift in Sources */,
 				3697AFBE22F6CDD50099E07C /* URLSetter.swift in Sources */,
 			);
