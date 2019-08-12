@@ -28,8 +28,8 @@
 		369E040022E8BCB000AFF3D8 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369E03FF22E8BCB000AFF3D8 /* RxRelay.framework */; };
 		369E040222E8BCEB00AFF3D8 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369E040122E8BCEB00AFF3D8 /* RxRelay.framework */; };
 		369E040322E8BCEB00AFF3D8 /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 369E040122E8BCEB00AFF3D8 /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		36F438A22301ADE1007E79A0 /* GurunaviCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36F438A12301ADE1007E79A0 /* GurunaviCustomCell.xib */; };
-		36F438A42301AF5E007E79A0 /* GroupCustomCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F438A32301AF5E007E79A0 /* GroupCustomCellView.swift */; };
+		36F438A72301BE69007E79A0 /* CustomCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F438A52301BE69007E79A0 /* CustomCellTableViewCell.swift */; };
+		36F438A82301BE69007E79A0 /* CustomCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36F438A62301BE69007E79A0 /* CustomCellTableViewCell.xib */; };
 		36FF2BA922FE79C1000A1FC1 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FF2BA822FE79C1000A1FC1 /* Article.swift */; };
 		36FF2BAB22FE79E9000A1FC1 /* Rest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FF2BAA22FE79E9000A1FC1 /* Rest.swift */; };
 		36FF2BAD22FE7A2D000A1FC1 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FF2BAC22FE7A2D000A1FC1 /* Image.swift */; };
@@ -95,8 +95,8 @@
 		369E03FA22E8B7B600AFF3D8 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		369E03FF22E8BCB000AFF3D8 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		369E040122E8BCEB00AFF3D8 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
-		36F438A12301ADE1007E79A0 /* GurunaviCustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GurunaviCustomCell.xib; sourceTree = "<group>"; };
-		36F438A32301AF5E007E79A0 /* GroupCustomCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCustomCellView.swift; sourceTree = "<group>"; };
+		36F438A52301BE69007E79A0 /* CustomCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellTableViewCell.swift; sourceTree = "<group>"; };
+		36F438A62301BE69007E79A0 /* CustomCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCellTableViewCell.xib; sourceTree = "<group>"; };
 		36FF2BA822FE79C1000A1FC1 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		36FF2BAA22FE79E9000A1FC1 /* Rest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rest.swift; sourceTree = "<group>"; };
 		36FF2BAC22FE7A2D000A1FC1 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
@@ -218,8 +218,8 @@
 		36F438A02301ADBA007E79A0 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				36F438A12301ADE1007E79A0 /* GurunaviCustomCell.xib */,
-				36F438A32301AF5E007E79A0 /* GroupCustomCellView.swift */,
+				36F438A52301BE69007E79A0 /* CustomCellTableViewCell.swift */,
+				36F438A62301BE69007E79A0 /* CustomCellTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -350,11 +350,11 @@
 			files = (
 				360C30CF22E75E06007580A2 /* gengou_happyou_reiwa.jpg in Resources */,
 				3697AFBC22F6CD4E0099E07C /* caffeeSearch.png in Resources */,
+				36F438A82301BE69007E79A0 /* CustomCellTableViewCell.xib in Resources */,
 				362D9FEE22F87D1D00AADAAB /* Animation.json in Resources */,
 				3640F68122D632BE0066FFB4 /* LaunchScreen.storyboard in Resources */,
 				3640F67E22D632BE0066FFB4 /* Assets.xcassets in Resources */,
 				3640F67C22D632BD0066FFB4 /* Main.storyboard in Resources */,
-				36F438A22301ADE1007E79A0 /* GurunaviCustomCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,9 +407,9 @@
 				36FF2BAD22FE7A2D000A1FC1 /* Image.swift in Sources */,
 				3640F67922D632BD0066FFB4 /* ViewController.swift in Sources */,
 				36FF2BAB22FE79E9000A1FC1 /* Rest.swift in Sources */,
+				36F438A72301BE69007E79A0 /* CustomCellTableViewCell.swift in Sources */,
 				3640F67722D632BD0066FFB4 /* AppDelegate.swift in Sources */,
 				3697AFBE22F6CDD50099E07C /* URLSetter.swift in Sources */,
-				36F438A42301AF5E007E79A0 /* GroupCustomCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

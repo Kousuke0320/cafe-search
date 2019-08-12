@@ -30,7 +30,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //setUpCell()
+        setUpCell()
         
         setupLocationManager()
         
@@ -42,8 +42,22 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         button.rx.tap.subscribe{ [unowned self] _ in
             let connectATabelog = ConnectToTabelog()
-            //ワードで検索
-//            connectATabelog.fetchArticle(name: self.textField.text, completion: { (articles) in
+            //ワードで検索®
+            connectATabelog.fetchArticle(name: self.textField.text, completion: { (articles) in
+                guard let articleValue = articles else {
+                    return
+                }
+                //なぜかnilがはいる
+                self.articles = articleValue
+
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                    //self.showAnimation()
+                }
+
+            })
+            //緯度経度で検索
+//            connectATabelog.fetchArticle(lat: self.lat, lon: self.lon, completion: { (articles) in
 //                guard let articleValue = articles else {
 //                    return
 //                }
@@ -54,21 +68,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 //                    self.tableView.reloadData()
 //                    //self.showAnimation()
 //                }
-//
 //            })
-            //緯度経度で検索
-            connectATabelog.fetchArticle(lat: self.lat, lon: self.lon, completion: { (articles) in
-                guard let articleValue = articles else {
-                    return
-                }
-                //なぜかnilがはいる
-                self.articles = articleValue
-                
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                    //self.showAnimation()
-                }
-            })
             
             }.disposed(by: disposeBag)
         
@@ -121,7 +121,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func setUpCell() {
-//        self.tableView.register(UINib(nibName: "GroupCustomCellVIew", bundle: nil), forCellReuseIdentifier: "GroupCustomCellVIew")
+        self.tableView.register(UINib(nibName: "CustomCellTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomCellTableViewCell")
 //
 //        guard let tableViewCell = tableView.dequeueReusableCell(withIdentifier: "GroupCustomCellVIew") as? GroupCustomCellView else {
 //            return
@@ -132,12 +132,12 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     //cellをセットする
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
-        //let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCustomCellVIew") as! GroupCustomCellView
+ //       let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCellTableViewCell") as! CustomCellTableViewCell
         let article = articles
         let rest = article.rest?[indexPath.row]
-        cell.textLabel?.text = rest?.name
-        //cell.cellLabel.text = rest?.name
+        //cell.textLabel?.text = rest?.name
+        cell.label.text = rest?.name
         
         guard let stringUrl = rest?.image_url?.shop_image1, !stringUrl.isEmpty else {
             return cell
@@ -147,8 +147,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         do {
             let data = try Data(contentsOf: url!)
             let image = UIImage(data: data)
-            cell.imageView?.image = image
-            //cell.cellImage.image = image
+            //cell.imageView?.image = image
+            cell.iamgeCell.image = image
         }catch let err {
             print("Error : \(err.localizedDescription)")
         }
