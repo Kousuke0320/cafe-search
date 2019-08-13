@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		360C30CF22E75E06007580A2 /* gengou_happyou_reiwa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 360C30CE22E75E06007580A2 /* gengou_happyou_reiwa.jpg */; };
-		360C30D122E76514007580A2 /* BB368C1B-0927-4802-8657-5A74B78F6250-4689-0000039609E52CF9.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 360C30D022E76514007580A2 /* BB368C1B-0927-4802-8657-5A74B78F6250-4689-0000039609E52CF9.jpeg */; };
+		362D9FE822F87B6000AADAAB /* Lottie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 362D9FE722F87B6000AADAAB /* Lottie.framework */; };
+		362D9FEE22F87D1D00AADAAB /* Animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 362D9FED22F87D1D00AADAAB /* Animation.json */; };
+		362D9FF022F885BB00AADAAB /* Lottie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 362D9FEF22F885BB00AADAAB /* Lottie.framework */; };
+		362D9FF122F885BB00AADAAB /* Lottie.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 362D9FEF22F885BB00AADAAB /* Lottie.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3640F67722D632BD0066FFB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3640F67622D632BD0066FFB4 /* AppDelegate.swift */; };
 		3640F67922D632BD0066FFB4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3640F67822D632BD0066FFB4 /* ViewController.swift */; };
 		3640F67C22D632BD0066FFB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3640F67A22D632BD0066FFB4 /* Main.storyboard */; };
@@ -25,6 +28,12 @@
 		369E040022E8BCB000AFF3D8 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369E03FF22E8BCB000AFF3D8 /* RxRelay.framework */; };
 		369E040222E8BCEB00AFF3D8 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 369E040122E8BCEB00AFF3D8 /* RxRelay.framework */; };
 		369E040322E8BCEB00AFF3D8 /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 369E040122E8BCEB00AFF3D8 /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		36F438A72301BE69007E79A0 /* CustomCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F438A52301BE69007E79A0 /* CustomCellTableViewCell.swift */; };
+		36F438A82301BE69007E79A0 /* CustomCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36F438A62301BE69007E79A0 /* CustomCellTableViewCell.xib */; };
+		36FF2BA922FE79C1000A1FC1 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FF2BA822FE79C1000A1FC1 /* Article.swift */; };
+		36FF2BAB22FE79E9000A1FC1 /* Rest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FF2BAA22FE79E9000A1FC1 /* Rest.swift */; };
+		36FF2BAD22FE7A2D000A1FC1 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FF2BAC22FE7A2D000A1FC1 /* Image.swift */; };
+		36FF2BB022FE7A6A000A1FC1 /* ConnectToTabelog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FF2BAF22FE7A6A000A1FC1 /* ConnectToTabelog.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +61,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				369E03FC22E8B7B600AFF3D8 /* RxSwift.framework in Embed Frameworks */,
+				362D9FF122F885BB00AADAAB /* Lottie.framework in Embed Frameworks */,
 				369E03F522E8B65800AFF3D8 /* RxCocoa.framework in Embed Frameworks */,
 				369E040322E8BCEB00AFF3D8 /* RxRelay.framework in Embed Frameworks */,
 			);
@@ -62,8 +72,10 @@
 
 /* Begin PBXFileReference section */
 		360C30CE22E75E06007580A2 /* gengou_happyou_reiwa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gengou_happyou_reiwa.jpg; sourceTree = "<group>"; };
-		360C30D022E76514007580A2 /* BB368C1B-0927-4802-8657-5A74B78F6250-4689-0000039609E52CF9.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "BB368C1B-0927-4802-8657-5A74B78F6250-4689-0000039609E52CF9.jpeg"; sourceTree = "<group>"; };
 		362260BE22E8A8D800E18AE9 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		362D9FE722F87B6000AADAAB /* Lottie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lottie.framework; path = Carthage/Build/iOS/Lottie.framework; sourceTree = "<group>"; };
+		362D9FED22F87D1D00AADAAB /* Animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Animation.json; path = ../../../Downloads/Animation.json; sourceTree = "<group>"; };
+		362D9FEF22F885BB00AADAAB /* Lottie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lottie.framework; path = Carthage/Build/iOS/Lottie.framework; sourceTree = "<group>"; };
 		3640F67322D632BD0066FFB4 /* sapleiosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sapleiosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3640F67622D632BD0066FFB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3640F67822D632BD0066FFB4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +95,12 @@
 		369E03FA22E8B7B600AFF3D8 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		369E03FF22E8BCB000AFF3D8 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		369E040122E8BCEB00AFF3D8 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
+		36F438A52301BE69007E79A0 /* CustomCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellTableViewCell.swift; sourceTree = "<group>"; };
+		36F438A62301BE69007E79A0 /* CustomCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCellTableViewCell.xib; sourceTree = "<group>"; };
+		36FF2BA822FE79C1000A1FC1 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		36FF2BAA22FE79E9000A1FC1 /* Rest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rest.swift; sourceTree = "<group>"; };
+		36FF2BAC22FE7A2D000A1FC1 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		36FF2BAF22FE7A6A000A1FC1 /* ConnectToTabelog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectToTabelog.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,10 +108,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				362D9FE822F87B6000AADAAB /* Lottie.framework in Frameworks */,
 				369E040222E8BCEB00AFF3D8 /* RxRelay.framework in Frameworks */,
 				369E040022E8BCB000AFF3D8 /* RxRelay.framework in Frameworks */,
 				369E03FE22E8BC4C00AFF3D8 /* RxCocoa.framework in Frameworks */,
 				369E03FD22E8BC3C00AFF3D8 /* RxSwift.framework in Frameworks */,
+				362D9FF022F885BB00AADAAB /* Lottie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,15 +137,26 @@
 		362260BD22E8A8D700E18AE9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				362D9FE722F87B6000AADAAB /* Lottie.framework */,
 				369E03FF22E8BCB000AFF3D8 /* RxRelay.framework */,
 				362260BE22E8A8D800E18AE9 /* RxSwift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		362D9FEB22F87CC300AADAAB /* img */ = {
+			isa = PBXGroup;
+			children = (
+				362D9FED22F87D1D00AADAAB /* Animation.json */,
+				3697AFBB22F6CD4D0099E07C /* caffeeSearch.png */,
+			);
+			path = img;
+			sourceTree = "<group>";
+		};
 		3640F66A22D632BD0066FFB4 = {
 			isa = PBXGroup;
 			children = (
+				362D9FEF22F885BB00AADAAB /* Lottie.framework */,
 				369E040122E8BCEB00AFF3D8 /* RxRelay.framework */,
 				369E03FA22E8B7B600AFF3D8 /* RxSwift.framework */,
 				369E03F322E8B65800AFF3D8 /* RxCocoa.framework */,
@@ -150,12 +181,14 @@
 		3640F67522D632BD0066FFB4 /* sapleiosApp */ = {
 			isa = PBXGroup;
 			children = (
+				36F438A02301ADBA007E79A0 /* View */,
+				36FF2BAE22FE7A4E000A1FC1 /* HTTP */,
+				36FF2BA522FE7913000A1FC1 /* Modile */,
+				362D9FEB22F87CC300AADAAB /* img */,
 				3640F67622D632BD0066FFB4 /* AppDelegate.swift */,
 				3640F67822D632BD0066FFB4 /* ViewController.swift */,
 				3640F67A22D632BD0066FFB4 /* Main.storyboard */,
 				3640F67D22D632BE0066FFB4 /* Assets.xcassets */,
-				3697AFBB22F6CD4D0099E07C /* caffeeSearch.png */,
-				360C30D022E76514007580A2 /* BB368C1B-0927-4802-8657-5A74B78F6250-4689-0000039609E52CF9.jpeg */,
 				3640F67F22D632BE0066FFB4 /* LaunchScreen.storyboard */,
 				360C30CE22E75E06007580A2 /* gengou_happyou_reiwa.jpg */,
 				3640F68222D632BE0066FFB4 /* Info.plist */,
@@ -180,6 +213,33 @@
 				3640F69822D632BE0066FFB4 /* Info.plist */,
 			);
 			path = sapleiosAppUITests;
+			sourceTree = "<group>";
+		};
+		36F438A02301ADBA007E79A0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				36F438A52301BE69007E79A0 /* CustomCellTableViewCell.swift */,
+				36F438A62301BE69007E79A0 /* CustomCellTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		36FF2BA522FE7913000A1FC1 /* Modile */ = {
+			isa = PBXGroup;
+			children = (
+				36FF2BA822FE79C1000A1FC1 /* Article.swift */,
+				36FF2BAA22FE79E9000A1FC1 /* Rest.swift */,
+				36FF2BAC22FE7A2D000A1FC1 /* Image.swift */,
+			);
+			path = Modile;
+			sourceTree = "<group>";
+		};
+		36FF2BAE22FE7A4E000A1FC1 /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				36FF2BAF22FE7A6A000A1FC1 /* ConnectToTabelog.swift */,
+			);
+			path = HTTP;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,8 +350,9 @@
 			files = (
 				360C30CF22E75E06007580A2 /* gengou_happyou_reiwa.jpg in Resources */,
 				3697AFBC22F6CD4E0099E07C /* caffeeSearch.png in Resources */,
+				36F438A82301BE69007E79A0 /* CustomCellTableViewCell.xib in Resources */,
+				362D9FEE22F87D1D00AADAAB /* Animation.json in Resources */,
 				3640F68122D632BE0066FFB4 /* LaunchScreen.storyboard in Resources */,
-				360C30D122E76514007580A2 /* BB368C1B-0927-4802-8657-5A74B78F6250-4689-0000039609E52CF9.jpeg in Resources */,
 				3640F67E22D632BE0066FFB4 /* Assets.xcassets in Resources */,
 				3640F67C22D632BD0066FFB4 /* Main.storyboard in Resources */,
 			);
@@ -341,7 +402,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36FF2BA922FE79C1000A1FC1 /* Article.swift in Sources */,
+				36FF2BB022FE7A6A000A1FC1 /* ConnectToTabelog.swift in Sources */,
+				36FF2BAD22FE7A2D000A1FC1 /* Image.swift in Sources */,
 				3640F67922D632BD0066FFB4 /* ViewController.swift in Sources */,
+				36FF2BAB22FE79E9000A1FC1 /* Rest.swift in Sources */,
+				36F438A72301BE69007E79A0 /* CustomCellTableViewCell.swift in Sources */,
 				3640F67722D632BD0066FFB4 /* AppDelegate.swift in Sources */,
 				3697AFBE22F6CDD50099E07C /* URLSetter.swift in Sources */,
 			);
